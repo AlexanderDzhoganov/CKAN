@@ -37,7 +37,8 @@ You can find all relevant code for this section in [master/CKAN/CKAN](https://gi
 
 [Here is a graph that contains all of the core classes and their relationships](http://i.imgur.com/o9jQxau.png). Don't be intimitated by the graph, CKAN's core is actually very clean and easily understandable, when you know the important stuff. So, here's the important stuff (in no particular order):
 
-#### Module ([Module.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/Module.cs)) - A base class for modules. The Module class is a strongly- typed representation of CKAN metadata for a particular module. It contains accessors for all schema fields, for example:
+#### Module ([Module.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/Module.cs))
+* A base class for modules. The Module class is a strongly- typed representation of CKAN metadata for a particular module. It contains accessors for all schema fields, for example:
 ```
 CkanModule mod = ...;
 Console.WriteLine(mod.download); 
