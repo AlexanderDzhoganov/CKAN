@@ -10,3 +10,30 @@ While CKAN itself is written exclusively in C# .NET, the toolset sports a variet
  
 ### CKAN Core
 
+### CKAN Command-Line
+
+### CKAN GUI
+
+### Setting up your development environment
+
+## Linux- based operating systems
+
+## Windows
+
+### General workflow
+
+## GitHub
+
+# Creating pull requests to master
+
+# Merging pull requests into master
+
+# Issues
+
+## Waffle.io
+
+### CKAN team communication
+
+## GitHub issues
+
+## IRC
