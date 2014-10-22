@@ -2,7 +2,7 @@
 
 ## About this document
 
-This document aims to explain the inner workings of CKAN as well as describe the currently agreed upon workflow. Hopefully, this will reduce friction for new contributors entering CKAN development. Also, this document provides some level of insurance that significant knowledge of the codebase won't be lost if a developer (or all of them?) leaves CKAN development.
+This document aims to explain the inner workings of CKAN as well as describe the currently agreed upon workflow. Hopefully, this will reduce friction for new contributors entering CKAN development. Also, this document provides some level of insurance that significant knowledge of the codebase won't be lost if a current contributor (or all of them?) leaves CKAN development.
 
 As with anything CKAN, this document is always open to corrections and improvements. Please note that any contribution must follow the [Contribution guidelines](https://github.com/KSP-CKAN/CKAN/blob/master/CONTRIBUTING.md) and the [Code of Conduct](https://github.com/KSP-CKAN/CKAN/wiki/Code-of-Conduct).
 
