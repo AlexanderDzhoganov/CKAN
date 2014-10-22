@@ -8,6 +8,13 @@ As with anything CKAN, this document is always open to corrections and improveme
 
 All code examples are in pseudo- C#. Due to CKAN being actively developed some details may changed or may have already changed, but hopefully the program structure remains relatively the same (or we'd have to update this document).
 
+All typenames will look like `SomeClassType`, while code will look like:
+```
+void foo() { return 1; }
+
+foo(1);
+```
+
 ## The CKAN project
 
 In its essence, CKAN consists of a core library module ("core"), a command-line client ("the command-line") and a GUI client ("the GUI") - collectively referred to as "CKAN" and a large number of supporting tools such as parsers, validators and bots ("CKAN Tools", "the tools" or "the toolset").
@@ -58,7 +65,7 @@ will print the download URL for a mod. Note that optional fields in the schema c
 * Represents a database of modules
 * The two important fields are two dictionaries - `available_modules` and `installed_modules`. Both are indexed by a module identifier. 
 * `available_modules` is a dictionary mapping a `string` module identifier to an `AvailableModule` ([AvailableModule.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/AvailableModule.cs)) instance. This is the list of all modules currently available in the repository. `AvailableModule` is a helper class that tracks module versions. This allows multiple versions of a single mod to co-exist in the repository. A call to `AvailableModule.Latest(KSPVersion kspVersion)` will produce a CkanModule compatible with the given KSP version (or throw if no such version exists)
-* `installed_modules` tracks all CKAN installed modules. It uses the `InstalledModule`([InstalledModule.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/InstalledModule.cs)) class which contains a list of installed files and a Module instance.
+* `installed_modules` tracks all CKAN installed modules. It uses the `InstalledModule`([InstalledModule.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/InstalledModule.cs)) class which contains a list of installed files and a `Module` instance.
 
 #### RegistryManager
 
