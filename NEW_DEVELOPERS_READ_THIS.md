@@ -1,4 +1,4 @@
-# CKAN - New developer guidelines
+# CKAN - New contributor guidelines
 
 ## About this document
 
