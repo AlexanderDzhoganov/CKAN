@@ -42,7 +42,7 @@ The core of CKAN contains all the code necessary to facilitate basic package man
 
 You can find all relevant code for this section in [master/CKAN/CKAN](https://github.com/KSP-CKAN/CKAN/tree/master/CKAN/CKAN).
 
-[Here is a graph that contains all of the core classes and their relationships](http://i.imgur.com/o9jQxau.png). Don't be intimidated by the amount of classes, CKAN's core is actually very clean and easily understandable, when you know the important stuff. So, here's the important stuff (in no particular order):
+[Here is a graph that contains all of the core classes and their relationships](http://i.imgur.com/o9jQxau.png). Don't be intimidated by the amount of classes, CKAN's core is very understandable when you are aware of the important stuff. So, here's the important stuff (in no particular order):
 
 #### Module ([Module.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/Module.cs))
 * A base class for modules. 
@@ -80,7 +80,6 @@ will print the download URL for a mod. Note that optional fields in the schema c
 * `Uninstall` will automatically uninstall mods that depend on whatever you're uninstalling unless you explicitly tell it not to.
 
 #### KSP
-* 
 
 #### Net
 
@@ -104,6 +103,10 @@ will print the download URL for a mod. Note that optional fields in the schema c
 * `YesNo` displays a message and a Yes/No prompt
 * `Error` displays an error
 * Use sparingly, popping up 20 dialogs at once in the GUI is not fun for the user :(
+
+### Logging
+
+We use log4net for logging. 
 
 ### Command-line client
 
