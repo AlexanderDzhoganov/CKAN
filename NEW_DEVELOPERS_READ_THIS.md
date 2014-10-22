@@ -19,6 +19,8 @@ While CKAN itself is written exclusively in C# .NET, the toolset sports a variet
 * ***CKAN metadata*** - a JSON- encoded string that represents all the metadata related to a particular module without the contents of the module itself. It describes the module contents (e.g. version, author, download url, homepage etc.)
 as well as the steps necessary to perform a complete installation. The metadata also contains information about the relationships between mods such as dependencies and recommendations.
 
+* ***CKAN schema*** - the JSON schema (Draft v4) against which all metadata strings are validated before being accepted into a repository, the latest version of the schema is available [here](https://raw.githubusercontent.com/KSP-CKAN/CKAN/master/CKAN.schema)
+
 ### CKAN Core
 
 The "core" of CKAN contains all the code necessary to facilitate the basic operations that CKAN performs - communicating with a CKAN repository
