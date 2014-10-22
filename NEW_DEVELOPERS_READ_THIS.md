@@ -90,10 +90,17 @@ will print the download URL for a mod.
 
 #### Issues
 
-### Waffle.io
+#### Coding style & formatting
 
-## CKAN team communication
+In general, for the C# code we follow [the Microsoft C# Coding Conventions](http://msdn.microsoft.com/en-us/library/ff926074.aspx).
 
-### GitHub issues
+Additionaly for readability and/ or performance reasons we avoid:
+* [LINQ](http://msdn.microsoft.com/en-us/library/bb397926.aspx)
+* [dynamic](http://msdn.microsoft.com/en-us/library/dd264736.aspx)
 
-### IRC
+## Communication with other contributors
+
+All contributors and fans hang out in #ckan @ irc.esper.net
+Come and talk to us :)
+
+If you don't have an IRC client installed - [here is one that runs in your browser](https://kiwiirc.com/client).
