@@ -93,15 +93,24 @@ will print the download URL for a mod. Note that optional fields in the schema c
 #### FilesystemTransaction ([TransactionalFilesystem.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/TransactionalFilesystem.cs))
 * Enables filesystem operations in an atomic fashion
 * Allows us to manipulate files without worrying about incomplete changes due to run- time errors.
-* You can use it by instantiating a new `FilesystemTransaction` object, then using its methods `OpenFileWrite`, `RemoveFile`, `CreateDirectory`, `DeleteDirectory`. To actually apply all the operations, you call `Commit()`. You can call `Rollback()` if you're sure to roll back a transaction, but it's not necessary, not calling `Commit()` is enough to make sure you haven't done any damage to the user's files
+* You can use it by instantiating a new `FilesystemTransaction` object, then using its methods `OpenFileWrite`, `RemoveFile`, `CreateDirectory`, `DeleteDirectory`. To actually apply all the operations, call `Commit()`. It's useful to `Rollback()` if you're sure to roll back a transaction, but it's not necessary, not calling `Commit()` is enough to be sure you haven't done any damage to the user's files
 * `OpenFileWrite` returns a `TransactionalFileWriter` object, you can use its `Stream` property to get a `FileStream` instance which you can write to.
-* Isn't really atomic, most filesystems and/ or hardware don't support it. It just queues all operations and then executes them at once on `Commit()`
+* Isn't actually atomic, most filesystems and/ or hardware don't support it. It just queues all operations and then executes them at once on `Commit()`
 
-#### User
+#### User ([User.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/User.cs))
+* The User class allows interaction with the User from core code
+* Works in both the command-line and GUI clients 
+* `WriteLine` displays a message to the user
+* `YesNo` displays a message and a Yes/No prompt
+* `Error` displays an error
+* Use sparingly, popping up 20 dialogs at once in the GUI is not fun for the user :(
 
-### CKAN Command-Line
+### Command-line client
 
-### CKAN GUI
+The command-line client resides in [CmdLine/Main.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CmdLine/Main.cs). This is the place to look if you wish to know how a particular feature works or if you're just starting to read the code.
+
+### GUI client
+The GUI client is sadly much more complicated than the command-line one, mostly because 90% of it is interface code with WindowsForms and the window designs themselves. The GUI is done in Visual Studio and although there are other WindowsForms editors, they have not been tested with CKAN (tell us if they work :P). 
 
 ### CKAN Tools
 
