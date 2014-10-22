@@ -33,7 +33,7 @@ While CKAN itself is written exclusively in C# .NET, the toolset sports a variet
 * ***Metadata*** - a JSON- encoded string that represents all the metadata related to a particular module without the contents of the module itself. It describes the mod itself (e.g. version, author, download url, homepage etc.)
 as well as the steps necessary to perform a complete installation. The metadata also contains information about the relationships between mods such as dependencies and recommendations. Note that the metadata does not usually fall under the same license as the mod contents.
 
-* ***Schema*** - the JSON schema (Draft v4) against which all metadata strings are validated before being accepted into a repository, the latest version of the schema is available [here](https://raw.githubusercontent.com/KSP-CKAN/CKAN/master/CKAN.schema)
+* ***Schema*** - the JSON schema ([Draft v4](http://json-schema.org/latest/json-schema-core.html)) against which all metadata strings are validated before being accepted into a repository, the latest version of the schema is available [here](https://raw.githubusercontent.com/KSP-CKAN/CKAN/master/CKAN.schema)
 
 * ***Mono*** - the FOSS [Mono project](http://www.mono-project.com/) is a complete .NET- compatible platform available for all modern desktop operating systems. Used in lieu of Microsoft's .NET where the latter is not available (more or less everything but Windows).
 
