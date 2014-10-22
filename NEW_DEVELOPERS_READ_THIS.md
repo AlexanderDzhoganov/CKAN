@@ -16,16 +16,16 @@ While CKAN itself is written exclusively in C# .NET, the toolset sports a variet
 
 ### Glossary
 
-* ***CKAN client*** - an end-user software package that enables the user to manage his or her installed mods by using metadata provided by a CKAN repository
+* ***Client*** - an end-user software package that enables the user to manage his or her installed mods by using metadata provided by a CKAN repository
 
-* ***CKAN repository*** - an online service which enables clients to fetch the latest available mod metadata and mod authors to upload new metadata.
+* ***Repository*** - an online service which enables clients to fetch the latest available mod metadata and mod authors to upload new metadata
 
-* ***CKAN module*** - a modification or enhancement to Kerbal Space Program, provided by mod authors to users under a certain license. A module is a collection of files, their licensing and the metadata related to those files.
+* ***Module*** - A modification or enhancement to Kerbal Space Program, provided by mod authors to users under a certain license. A module is a collection of files, their licensing and the metadata related to those files. Uniquely identified by a string called `identifier`
 
-* ***CKAN metadata*** - a JSON- encoded string that represents all the metadata related to a particular module without the contents of the module itself. It describes the module contents (e.g. version, author, download url, homepage etc.)
+* ***Metadata*** - a JSON- encoded string that represents all the metadata related to a particular module without the contents of the module itself. It describes the mod itself (e.g. version, author, download url, homepage etc.)
 as well as the steps necessary to perform a complete installation. The metadata also contains information about the relationships between mods such as dependencies and recommendations. Note that the metadata does not usually fall under the same license as the mod contents.
 
-* ***CKAN schema*** - the JSON schema (Draft v4) against which all metadata strings are validated before being accepted into a repository, the latest version of the schema is available [here](https://raw.githubusercontent.com/KSP-CKAN/CKAN/master/CKAN.schema)
+* ***Schema*** - the JSON schema (Draft v4) against which all metadata strings are validated before being accepted into a repository, the latest version of the schema is available [here](https://raw.githubusercontent.com/KSP-CKAN/CKAN/master/CKAN.schema)
 
 * ***Mono*** - the FOSS [Mono project](http://www.mono-project.com/) is a complete .NET- compatible platform available for all modern desktop operating systems. Used in lieu of Microsoft's .NET where the latter is not available (more or less everything but Windows).
 
@@ -56,8 +56,9 @@ will print the download URL for a mod. Note that optional fields in the schema c
 
 #### Registry ([Registry.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/Registry.cs))
 * Represents a database of modules
-* The two important fields are 'available_modules' and 'installed_modules', both are indexed by the module identifier
-* 
+* The two important fields are two dictionaries - 'available_modules' and 'installed_modules'. Both are indexed by a module identifier. 
+* `available_modules` is a dictionary mapping a `string` module identifier to an `AvailableModule` ([AvailableModule.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/AvailableModule.cs)) instance. This is the list of all modules currently available in the repository. `AvailableModule` is a helper class that tracks module versions. This allows multiple versions of a single mod to co-exist in the repository. A call to `AvailableModule.Latest(KSPVersion kspVersion)` will produce a CkanModule compatible with the given KSP version (or throw if no such version exists)
+* `installed_modules` tracks all CKAN installed modules. It uses the `InstalledModule`([InstalledModule.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/InstalledModule.cs)) class which contains a list of installed files and a Module instance.
 
 #### RegistryManager
 
