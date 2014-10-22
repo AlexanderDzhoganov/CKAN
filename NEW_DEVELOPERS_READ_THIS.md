@@ -105,11 +105,11 @@ will print the download URL for a mod. Note that optional fields in the schema c
 
 ### Linux- based operating systems
 
-You will need at least (MonoDevelop)[http://monodevelop.com/] and (Mono)[http://www.mono-project.com/] to be able to open and build the CKAN.sln file. You can use `xbuild` that comes with Mono for command-line builds. MonoDevelop aims to be a full C#- capable IDE similarly to Visual Studio as comes with an editor, compiler and debugger.
+You will need at least [MonoDevelop](http://monodevelop.com/) and [Mono](http://www.mono-project.com/) to be able to open and build the CKAN.sln file. You can use `xbuild` that comes with Mono for command-line builds. MonoDevelop aims to be a full C#- capable IDE similarly to Visual Studio as comes with an editor, compiler and debugger.
 
 ### Windows
 
-You most likely want to use (Visual Studio)[http://www.visualstudio.com/]. Although proprietary, the (Express version)[http://www.visualstudio.com/en-us/products/visual-studio-express-vs.aspx] is fully capable (same compiler as the other versions) and comes at zero cost. You can use MonoDevelop on Windows, but it is a worse IDE than VS (for now).
+You most likely want to use [Visual Studio](http://www.visualstudio.com/). Although proprietary, the [Express version](http://www.visualstudio.com/en-us/products/visual-studio-express-vs.aspx) is fully capable (same compiler as the other versions) and comes at zero cost. You can use MonoDevelop on Windows, but it is a worse IDE than VS (for now).
 
 ## General workflow
 
