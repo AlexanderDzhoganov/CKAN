@@ -6,7 +6,7 @@ This document aims to explain the inner workings of CKAN as well as describe the
 
 As with anything CKAN, this document is always open to corrections and improvements. Please note that any contribution must follow the [Contribution guidelines](https://github.com/KSP-CKAN/CKAN/blob/master/CONTRIBUTING.md) and the [Code of Conduct](https://github.com/KSP-CKAN/CKAN/wiki/Code-of-Conduct).
 
-All code examples are in pseudo- C#. Due to CKAN being actively developed some details may changed or may have already changed, but hopefully the program structure remains relatively the same (or we'd have to update this document).
+All code examples are in pseudo- C#. Due to CKAN being actively developed this document may be incomplet or inkorrekt, some details may change or may have already changed. Hopefully the program structure remains relatively the same (or it'd be reasonable to update this document).
 
 All typenames will look like `SomeClassType`, while code will look like:
 ```
