@@ -27,7 +27,18 @@ as well as the steps necessary to perform a complete installation. The metadata 
 
 ### CKAN Core
 
-The "core" of CKAN contains all the code necessary to facilitate the basic operations that CKAN performs - communicating with a CKAN repository
+The core of CKAN contains all the code necessary to facilitate all basic operations such as communicating with a CKAN repository and installing available modules.
+
+You can find all relevant code for this section in [master/CKAN/CKAN](https://github.com/KSP-CKAN/CKAN/tree/master/CKAN/CKAN).
+
+[Here is a graph that contains all of the core classes and their relationships](http://i.imgur.com/o9jQxau.png). Don't be intimitated by the graph, CKAN's core is actually very clean and easily understandable, when you know the important stuff. So, here's the important stuff (in no particular order):
+
+* CkanModule (Module.cs) - a strongly- typed representation of CKAN metadata for a particular module. It contains accessors for all schema fields, for example:
+```
+CkanModule mod = ...;
+Console.WriteLine(mod.download); 
+```
+will print the download URL for a mod
 
 ### CKAN Command-Line
 
