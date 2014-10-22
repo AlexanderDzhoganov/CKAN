@@ -35,22 +35,29 @@ The core of CKAN contains all the code necessary to facilitate basic package man
 
 You can find all relevant code for this section in [master/CKAN/CKAN](https://github.com/KSP-CKAN/CKAN/tree/master/CKAN/CKAN).
 
-[Here is a graph that contains all of the core classes and their relationships](http://i.imgur.com/o9jQxau.png). Don't be intimitated by the graph, CKAN's core is actually very clean and easily understandable, when you know the important stuff. So, here's the important stuff (in no particular order):
+[Here is a graph that contains all of the core classes and their relationships](http://i.imgur.com/o9jQxau.png). Don't be intimidated by the amount of classes, CKAN's core is actually very clean and easily understandable, when you know the important stuff. So, here's the important stuff (in no particular order):
 
 #### Module ([Module.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/Module.cs))
-* A base class for modules. The Module class is a strongly- typed representation of CKAN metadata for a particular module. It contains accessors for all schema fields, for example:
+* A base class for modules. 
+* Strongly- typed representation of CKAN metadata.
+* Modules are uniquely identified by their `string identifier` field, two different mods cannot have the same identifier (this is enforced at repository level)
+* Contains accessors for all schema fields, for example:
 ```
 CkanModule mod = ...;
 Console.WriteLine(mod.download); 
 ```
-will print the download URL for a mod.
+will print the download URL for a mod. Note that optional fields in the schema can result in `null` values, so remember to check!
 
 #### CkanModule ([Module.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/Module.cs))
-* A concrete instance of a CKAN module. Inherits from the Module class and allows converting JSON to a CkanModule and vice versa.
+* A concrete instance of a CKAN module.
+* Inherits from the Module class and allows converting JSON to a CkanModule and vice versa.
 * Available CkanModules are generated at run-time by JSON- parsing repository- obtained .ckan metadata files and are located in the Registry.
 * This class will probably get merged with Module as we [phase out bundles](https://github.com/KSP-CKAN/CKAN/issues/113)
 
-#### Registry - The Registry class represents a database of modules
+#### Registry ([Registry.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/Registry.cs))
+* Represents a database of modules
+* The two important fields are 'available_modules' and 'installed_modules', both are indexed by the module identifier
+* 
 
 #### RegistryManager
 
