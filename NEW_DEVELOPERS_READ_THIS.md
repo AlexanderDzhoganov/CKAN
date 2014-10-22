@@ -14,26 +14,26 @@ While CKAN itself is written exclusively in C# .NET, the toolset sports a variet
 
 ### CKAN GUI
 
-### Setting up your development environment
+## Setting up your development environment
 
-## Linux- based operating systems
+### Linux- based operating systems
 
-## Windows
+### Windows
 
-### General workflow
+## General workflow
 
-## GitHub
+### GitHub
 
-# Creating pull requests to master
+#### Creating pull requests to master
 
-# Merging pull requests into master
+#### Merging pull requests into master
 
-# Issues
+#### Issues
 
-## Waffle.io
+### Waffle.io
 
-### CKAN team communication
+## CKAN team communication
 
-## GitHub issues
+### GitHub issues
 
-## IRC
+### IRC
