@@ -1,8 +1,12 @@
 # CKAN - New developer guidelines
 
+## About this document
+
 This document aims to explain the inner workings of CKAN as well as describing the currently agreed upon workflow. Hopefully, this will reduce friction for new developers entering CKAN development. Also, this document provides some level of insurance that significant knowledge of the codebase won't be lost if a developer leaves CKAN development.
 
 As with anything CKAN, this document is always open to changes and improvements. Please note that any contribution must follow the [Contribution guidelines](https://github.com/KSP-CKAN/CKAN/blob/master/CONTRIBUTING.md) and the [Code of Conduct](https://github.com/KSP-CKAN/CKAN/wiki/Code-of-Conduct).
+
+All code examples are in pseudo- C#. Due to CKAN being actively developed some details may have changed, but hopefully the program structure remains relatively the same (or we'd have to update this document).
 
 ## The CKAN project
 
