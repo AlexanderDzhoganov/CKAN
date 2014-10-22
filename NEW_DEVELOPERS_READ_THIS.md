@@ -11,8 +11,11 @@ While CKAN itself is written exclusively in C# .NET, the toolset sports a variet
 ### Glossary
 
 * ***CKAN client*** - an end-user software package that enables the user to manage his or her installed mods by using metadata provided by a CKAN repository
+
 * ***CKAN repository*** - an online service which enables clients to fetch the latest available mod metadata
+
 * ***CKAN module*** - a modification or enhancement to Kerbal Space Program, provided by mod authors to users. A module is a collection of files and the metadata related to those files.
+
 * ***CKAN metadata*** - a JSON- encoded string that represents all the metadata related to a particular module without the contents of the module itself. It describes the module contents (e.g. version, author, download url, homepage etc.)
 as well as the steps necessary to perform a complete installation. The metadata also contains information about the relationships between mods such as dependencies and recommendations.
 
