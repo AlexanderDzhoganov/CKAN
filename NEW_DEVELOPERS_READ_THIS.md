@@ -50,13 +50,13 @@ will print the download URL for a mod. Note that optional fields in the schema c
 
 #### CkanModule ([Module.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/Module.cs))
 * A concrete instance of a CKAN module.
-* Inherits from the Module class and allows converting JSON to a CkanModule and vice versa.
-* Available CkanModules are generated at run-time by JSON- parsing repository- obtained .ckan metadata files and are located in the Registry.
+* Inherits from `Module` and allows converting JSON to a CkanModule and vice versa.
+* Available `CkanModule`s are generated at run-time by JSON- parsing repository- obtained .ckan metadata files and are located in the `Registry`.
 * This class will probably get merged with Module as we [phase out bundles](https://github.com/KSP-CKAN/CKAN/issues/113)
 
 #### Registry ([Registry.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/Registry.cs))
 * Represents a database of modules
-* The two important fields are two dictionaries - 'available_modules' and 'installed_modules'. Both are indexed by a module identifier. 
+* The two important fields are two dictionaries - `available_modules` and `installed_modules`. Both are indexed by a module identifier. 
 * `available_modules` is a dictionary mapping a `string` module identifier to an `AvailableModule` ([AvailableModule.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/AvailableModule.cs)) instance. This is the list of all modules currently available in the repository. `AvailableModule` is a helper class that tracks module versions. This allows multiple versions of a single mod to co-exist in the repository. A call to `AvailableModule.Latest(KSPVersion kspVersion)` will produce a CkanModule compatible with the given KSP version (or throw if no such version exists)
 * `installed_modules` tracks all CKAN installed modules. It uses the `InstalledModule`([InstalledModule.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/InstalledModule.cs)) class which contains a list of installed files and a Module instance.
 
