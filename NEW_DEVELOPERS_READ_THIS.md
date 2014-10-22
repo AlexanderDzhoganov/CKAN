@@ -8,7 +8,8 @@ As with anything CKAN, this document is always open to corrections and improveme
 
 Due to CKAN being actively developed this document may be incomplet or inkorrekt, some details may change or may have already changed. Hopefully the program structure remains relatively the same (or it'd be reasonable to update this).
 
-All code examples are in pseudo- C#. All typenames look like `SomeClassType`, while code looks like:
+All code examples are in pseudo- C#. All typenames look like `SomeClassType` while variables names look like `this`.
+And this is some code:
 ```
 void foo() { return 1; }
 
@@ -67,15 +68,26 @@ will print the download URL for a mod. Note that optional fields in the schema c
 * `available_modules` is a dictionary mapping a `string` module identifier to an `AvailableModule` ([AvailableModule.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/AvailableModule.cs)) instance. This is the list of all modules currently available in the repository. `AvailableModule` is a helper class that tracks module versions. This allows multiple versions of a single mod to co-exist in the repository. A call to `AvailableModule.Latest(KSPVersion kspVersion)` will produce a CkanModule compatible with the given KSP version (or throw if no such version exists)
 * `installed_modules` tracks all CKAN installed modules. It uses the `InstalledModule`([InstalledModule.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/InstalledModule.cs)) class which contains a list of installed files and a `Module` instance.
 
-#### RegistryManager
+#### RegistryManager ([RegistryManager.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/RegistryManager.cs))
+* Singleton, use RegistryManager.Instance()
+* Holds the current registry and provides methods for serialization
+* In most cases you will need the `registry` field which is the current `Registry`
 
-####  ModuleInstaller
+####  ModuleInstaller ([ModuleInstaller.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/ModuleInstaller.cs))
+* Singleton, use ModuleInstaller.Instance
+* Contains all the logic for installing, updating and uninstalling modules
+* Important public functions are `IsCached`, `InstallList`, `Uninstall`
+* `InstallList` is what the clients call to install mods. It resolves dependencies according to `RelationshipResolverOptions`, downloads the data and performs the necessary file operations. 
+* `Uninstall` will automatically uninstall mods that depend on whatever you're uninstalling unless you explicitly tell it not to
 
 #### KSP
+* 
 
 #### Net
 
 #### RelationshipResolver
+
+### RelationshipResolverOptions
 
 #### Repo
 
@@ -99,7 +111,7 @@ will print the download URL for a mod. Note that optional fields in the schema c
 
 ### GitHub
 
-#### Creating pull requests to master
+#### Creating pull requests
 
 #### Merging pull requests into master
 
