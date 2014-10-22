@@ -21,6 +21,8 @@ as well as the steps necessary to perform a complete installation. The metadata 
 
 * ***CKAN schema*** - the JSON schema (Draft v4) against which all metadata strings are validated before being accepted into a repository, the latest version of the schema is available [here](https://raw.githubusercontent.com/KSP-CKAN/CKAN/master/CKAN.schema)
 
+* ***Mono*** - the [Mono project](http://www.mono-project.com/) is a complete FOSS .NET platform available for all modern desktop operating systems, used in lieu of Microsoft's .NET on platforms where it's not available (everything but Windows).
+
 ### CKAN Core
 
 The "core" of CKAN contains all the code necessary to facilitate the basic operations that CKAN performs - communicating with a CKAN repository
@@ -28,6 +30,8 @@ The "core" of CKAN contains all the code necessary to facilitate the basic opera
 ### CKAN Command-Line
 
 ### CKAN GUI
+
+### CKAN Tools
 
 ## Setting up your development environment
 
