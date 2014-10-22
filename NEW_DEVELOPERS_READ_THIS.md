@@ -93,7 +93,7 @@ will print the download URL for a mod. Note that optional fields in the schema c
 #### FilesystemTransaction ([TransactionalFilesystem.cs](https://github.com/KSP-CKAN/CKAN/blob/master/CKAN/CKAN/TransactionalFilesystem.cs))
 * Enables filesystem operations in an atomic fashion
 * Allows us to manipulate files without worrying about incomplete changes due to run- time errors.
-* You can use it by instantiateing a new `FilesystemTransaction` object, then using its methods `OpenFileWrite`, `RemoveFile`, `CreateDirectory`, `DeleteDirectory`. To actually apply all the operations, you call `Commit()`. You can call `Rollback()` if you're sure to roll back a transaction, but it's not necessary, not calling `Commit()` is enough to make sure you haven't done any damage to the user's files
+* You can use it by instantiating a new `FilesystemTransaction` object, then using its methods `OpenFileWrite`, `RemoveFile`, `CreateDirectory`, `DeleteDirectory`. To actually apply all the operations, you call `Commit()`. You can call `Rollback()` if you're sure to roll back a transaction, but it's not necessary, not calling `Commit()` is enough to make sure you haven't done any damage to the user's files
 * `OpenFileWrite` returns a `TransactionalFileWriter` object, you can use its `Stream` property to get a `FileStream` instance which you can write to.
 * Isn't really atomic, most filesystems and/ or hardware don't support it. It just queues all operations and then executes them at once on `Commit()`
 
