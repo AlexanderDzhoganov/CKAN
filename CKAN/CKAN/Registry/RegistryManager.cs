@@ -109,12 +109,15 @@ namespace CKAN
             return JsonConvert.SerializeObject(registry);
         }
 
-        public void Save()
+        public void Save(bool enforce_consistency = true)
         {
             log.DebugFormat("Saving CKAN registry at {0}", path);
 
             // No saving the registry unless it's in a sane state.
-            registry.CheckSanity();
+            if (enforce_consistency)
+            {
+                registry.CheckSanity();
+            }
 
             string directoryPath = Path.GetDirectoryName(path);
 

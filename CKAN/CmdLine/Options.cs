@@ -156,6 +156,8 @@ namespace CKAN.CmdLine
 
     internal class ScanOptions : CommonOptions
     {
+        [Option("no-enforce-consistency", HelpText = "Does not enforce consistency of the registry after scanning")]
+        public bool no_enforce_consistency { get; set; }
     }
 
     internal class ListOptions : CommonOptions

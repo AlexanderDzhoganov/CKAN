@@ -142,7 +142,7 @@ namespace CKAN.CmdLine
                     return Install((InstallOptions) cmdline.options);
 
                 case "scan":
-                    return Scan();
+                    return Scan((ScanOptions) cmdline.options);
 
                 case "list":
                     return List();
@@ -231,10 +231,11 @@ namespace CKAN.CmdLine
             return Exit.OK;
         }
 
-        private static int Scan()
+        private static int Scan(ScanOptions options)
         {
-            KSPManager.CurrentInstance.ScanGameData();
 
+
+            KSPManager.CurrentInstance.ScanGameData();
             return Exit.OK;
         }
 

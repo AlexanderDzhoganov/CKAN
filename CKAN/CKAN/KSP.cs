@@ -300,7 +300,7 @@ namespace CKAN
         /// This *saves* the registry upon completion.
         /// </summary>
         // TODO: This would likely be better in the Registry class itself.
-        public void ScanGameData()
+        public void ScanGameData(bool enforce_consistency = true)
         {
             using (TransactionScope tx = new TransactionScope())
             {
@@ -330,7 +330,8 @@ namespace CKAN
                     
                 tx.Complete();
             }
-            this.RegistryManager.Save();
+
+            this.RegistryManager.Save(enforce_consistency);
         }
 
         #endregion
